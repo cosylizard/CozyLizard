@@ -1,0 +1,490 @@
+HI-TECH Software C Compiler 
+
+Linker command line:
+
+--edf=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\dat\en_msgs.txt -cs \
+  -h+dist/default/production\IO_Test.X.production.sym -z -Q16F690 -ol.obj \
+  -Mdist/default/production/IO_Test.X.production.map -E1 \
+  -ACONST=00h-0FFhx16 -ACODE=00h-07FFhx2 -ASTRCODE=00h-0FFFh \
+  -AENTRY=00h-0FFhx16 -ASTRING=00h-0FFhx16 -ABANK0=020h-06Fh \
+  -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh \
+  -ARAM=020h-06Fh,0A0h-0EFh,0120h-016Fh \
+  -AABS1=020h-07Fh,0A0h-0EFh,0120h-016Fh -ACOMMON=070h-07Fh -ASFR0=00h-01Fh \
+  -ASFR1=080h-09Fh -ASFR2=0100h-011Fh -ASFR3=0180h-01EFh \
+  -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pfunctab=CODE \
+  -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 -AIDLOC=02000h-02003h \
+  -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA \
+  -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
+  C:\Users\Dave\AppData\Local\Temp\s6rs.obj \
+  dist/default/production\IO_Test.X.production.obj 
+
+Object code version is 3.10
+
+Machine type is 16F690
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+C:\Users\Dave\AppData\Local\Temp\s6rs.obj
+                end_init                             11       11        2        8       0
+                reset_vec                             0        0        2        0       0
+dist/default/production\IO_Test.X.production.obj
+                intentry                              4        4        D        8       0
+                config                             2007     2007        1     400E       0
+                text780                             DB8      DB8       16     1B70       0
+                text779                             DA6      DA6        4     1B4C       0
+                text778                             E47      E47       30     1C8E       0
+                text777                             F07      F07       50     1E0E       0
+                text776                             DEA      DEA       2E     1BD4       0
+                text775                             F57      F57       54     1EAE       0
+                text774                             6D9      6D9       6B        8       0
+                text773                             5F3      5F3       75        8       0
+                text772                             744      744       68        8       0
+                text771                             668      668       71        8       0
+                text770                             198      198      179        8       0
+                text769                             540      540       B3        8       0
+                text768                             DCE      DCE       1C     1B9C       0
+                text767                             7AC      7AC       54        8       0
+                text766                             E77      E77       48     1CEE       0
+                text765                             EBF      EBF       48     1D7E       0
+                text764                             E18      E18       2F     1C30       0
+                text763                             311      311      129        8       0
+                text762                             43A      43A      106        8       0
+                text761                             FAB      FAB       55     1F56       0
+                maintext                             13       13      185        8       0
+                cstackBANK0                          20       20       22       20       1
+                cstackCOMMON                         70       70        9       70       1
+                bssBANK0                             42       42        A       20       1
+                bitbssCOMMON                        3C8       79        4       70       1     8
+                cinit                               DAA      DAA        E     1B54       0
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   CONST          
+
+        CLASS   CODE           
+                end_init                             11       11        2         0
+                intentry                              4        4        D         0
+                reset_vec                             0        0        2         0
+                text780                             DB8      DB8       16         0
+                text779                             DA6      DA6        4         0
+                text778                             E47      E47       30         0
+                text777                             F07      F07       50         0
+                text776                             DEA      DEA       2E         0
+                text775                             F57      F57       54         0
+                text774                             6D9      6D9       6B         0
+                text773                             5F3      5F3       75         0
+                text772                             744      744       68         0
+                text771                             668      668       71         0
+                text770                             198      198      179         0
+                text769                             540      540       B3         0
+                text768                             DCE      DCE       1C         0
+                text767                             7AC      7AC       54         0
+                text766                             E77      E77       48         0
+                text765                             EBF      EBF       48         0
+                text764                             E18      E18       2F         0
+                text763                             311      311      129         0
+                text762                             43A      43A      106         0
+                text761                             FAB      FAB       55         0
+                maintext                             13       13      185         0
+                cinit                               DAA      DAA        E         0
+
+        CLASS   STRCODE        
+
+        CLASS   ENTRY          
+
+        CLASS   STRING         
+
+        CLASS   BANK0          
+                cstackBANK0                          20       20       22         1
+                bssBANK0                             42       42        A         1
+
+        CLASS   BANK1          
+
+        CLASS   BANK2          
+
+        CLASS   RAM            
+
+        CLASS   ABS1           
+                abs_s1                               7E       7E        2         1
+
+        CLASS   COMMON         
+                cstackCOMMON                         70       70        9         1
+                bitbssCOMMON                        3C8       79        4         1
+
+        CLASS   SFR0           
+
+        CLASS   SFR1           
+
+        CLASS   SFR2           
+
+        CLASS   SFR3           
+
+        CLASS   CONFIG         
+                config                             2007     2007        1         0
+
+        CLASS   IDLOC          
+
+        CLASS   EEDATA         
+
+        CLASS   BANK3          
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
+
+                reset_vec                      000000  000002  000002         0       0  CODE        2
+                intentry                       000004  0007FC  000800         8       0  CODE        2
+                cstackBANK0                    000020  00002C  00004C        20       1  BANK0       1
+                cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
+                text779                        000DA6  000004  000DAA      1B4C       0  CODE        2
+                cinit                          000DAA  00000E  000DB8      1B54       0  CODE        2
+                text780                        000DB8  000016  000DCE      1B70       0  CODE        2
+                text768                        000DCE  00001C  000DEA      1B9C       0  CODE        2
+                text776                        000DEA  00002E  000E18      1BD4       0  CODE        2
+                text764                        000E18  00002F  000E47      1C30       0  CODE        2
+                text778                        000E47  000030  000E77      1C8E       0  CODE        2
+                text766                        000E77  000048  000EBF      1CEE       0  CODE        2
+                text765                        000EBF  000048  000F07      1D7E       0  CODE        2
+                text777                        000F07  000050  000F57      1E0E       0  CODE        2
+                text775                        000F57  000054  000FAB      1EAE       0  CODE        2
+                text761                        000FAB  000055  001000      1F56       0  CODE        2
+                config                         002007  000001  002008      400E       0  CONFIG      2
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            004C-006F             24           1
+        BANK1            00A0-00EF             50           1
+        BANK2            0120-016F             50           1
+        CODE             0002-0003              2           2
+                         0800-0DA5            5A6
+        COMMON           007A-007D              4           1
+        CONST            0002-0003              2           2
+                         0800-0DA5            100
+        EEDATA           2100-21FF            100           2
+        ENTRY            0002-0003              2           2
+                         0800-0DA5            100
+        IDLOC            2000-2003              4           2
+        RAM              004C-006F             24           1
+                         00A0-00EF             50
+                         0120-016F             50
+        SFR0             0000-001F             20           1
+        SFR1             0080-009F             20           1
+        SFR2             0100-011F             20           1
+        SFR3             0180-01EF             70           1
+        STRCODE          0002-0003              2           2
+                         0800-0DA5            5A6
+        STRING           0002-0003              2           2
+                         0800-0DA5            100
+
+                                  Symbol Table
+
+??_AutoDetectSensors               cstackBANK0  0036
+??_GetData                         cstackBANK0  0020
+??_GetHumidity                     cstackCOMMON 0077
+??_GetTemperature                  cstackCOMMON 0077
+??_IdentifySensor                  cstackCOMMON 0079
+??_ReadBit                         cstackCOMMON 0074
+??_ReturnHumidity                  cstackBANK0  0038
+??_ReturnTemperature               cstackBANK0  0038
+??___lwdiv                         cstackCOMMON 0078
+??___wmul                          cstackCOMMON 0078
+??_ds_gettemperature               cstackBANK0  0026
+??_ds_read                         cstackCOMMON 0074
+??_ds_reset                        cstackCOMMON 0074
+??_ds_write                        cstackCOMMON 0074
+??_isr                             cstackCOMMON 0070
+??_main                            cstackBANK0  003E
+??_onewire_init                    cstackCOMMON 0074
+??_onewire_listen                  cstackCOMMON 0076
+??_onewire_read                    cstackCOMMON 0074
+??_onewire_sendpacket              cstackCOMMON 0076
+??_onewire_write                   cstackCOMMON 0074
+?_AutoDetectSensors                cstackCOMMON 0070
+?_GetData                          cstackCOMMON 0070
+?_GetHumidity                      cstackCOMMON 0075
+?_GetTemperature                   cstackCOMMON 0075
+?_IdentifySensor                   cstackCOMMON 0070
+?_ReadBit                          cstackCOMMON 0070
+?_ReturnHumidity                   cstackBANK0  0035
+?_ReturnTemperature                cstackBANK0  0035
+?___lwdiv                          cstackCOMMON 0074
+?___wmul                           cstackCOMMON 0074
+?_ds_gettemperature                cstackBANK0  0024
+?_ds_read                          cstackCOMMON 0070
+?_ds_reset                         cstackCOMMON 0070
+?_ds_write                         cstackCOMMON 0070
+?_isr                              cstackCOMMON 0070
+?_main                             cstackCOMMON 0070
+?_onewire_init                     cstackCOMMON 0070
+?_onewire_listen                   cstackCOMMON 0070
+?_onewire_read                     cstackCOMMON 0070
+?_onewire_sendpacket               cstackBANK0  0024
+?_onewire_write                    cstackCOMMON 0070
+GetData@Check                      cstackBANK0  0026
+GetData@i                          cstackBANK0  0028
+GetData@i_1941                     cstackBANK0  002A
+GetData@i_1942                     cstackBANK0  002C
+GetData@i_1943                     cstackBANK0  002E
+GetData@i_1944                     cstackBANK0  0030
+GetHumidity@databitmap             cstackBANK0  0032
+GetHumidity@humidity               cstackBANK0  0033
+GetTemperature@databitmap          cstackBANK0  0032
+GetTemperature@temperature         cstackBANK0  0033
+IdentifySensor@bitmap              cstackBANK0  0035
+ReturnHumidity@SensorType          cstackBANK0  0035
+ReturnHumidity@bitmap              cstackBANK0  0037
+ReturnHumidity@humidity            cstackBANK0  003A
+ReturnTemperature@SensorType       cstackBANK0  0035
+ReturnTemperature@bitmap           cstackBANK0  0037
+ReturnTemperature@temperature      cstackBANK0  003A
+ReturnTemperature@temperature_4136 cstackBANK0  003C
+_ANSEL                             (abs)        011E
+_ANSELH                            (abs)        011F
+_AutoDetectSensors                 text761      0FAB
+_BAUDCTL                           (abs)        009B
+_CARRY                             (abs)        0018
+_CheckSum                          bssBANK0     0042
+_DHTTimeOut                        bitbssCOMMON 03C8
+_DHT_Error                         bitbssCOMMON 03C9
+_DS18b20TimeOut                    bitbssCOMMON 03CA
+_DataBitMap                        bssBANK0     0043
+_EEADR                             (abs)        010D
+_EECON1                            (abs)        018C
+_EECON2                            (abs)        018D
+_EEDATA                            (abs)        010C
+_GIE                               (abs)        005F
+_GetData                           text770      0198
+_GetHumidity                       text765      0EBF
+_GetTemperature                    text766      0E77
+_HumidH                            bssBANK0     0044
+_HumidL                            bssBANK0     0045
+_INTCON                            (abs)        000B
+_IdentifySensor                    text764      0E18
+_OSCCON                            (abs)        008F
+_PIE1                              (abs)        008C
+_PORTB                             (abs)        0006
+_PORTC                             (abs)        0007
+_RCIF                              (abs)        0065
+_RCREG                             (abs)        001A
+_RCSTA                             (abs)        0018
+_RD                                (abs)        0C60
+_ReadBit                           text776      0DEA
+_Result                            bitbssCOMMON 03CB
+_ReturnHumidity                    text762      043A
+_ReturnTemperature                 text763      0311
+_SPBRG                             (abs)        0099
+_Sensor1                           bssBANK0     0046
+_Sensor2                           bssBANK0     0047
+_Sensor3                           bssBANK0     0048
+_Sensor4                           bssBANK0     0049
+_T1CON                             (abs)        0010
+_TMR1H                             (abs)        000F
+_TMR1IF                            (abs)        0060
+_TMR1L                             (abs)        000E
+_TMR1ON                            (abs)        0080
+_TRISB                             (abs)        0086
+_TRISB5                            (abs)        0435
+_TRISB7                            (abs)        0437
+_TRISC                             (abs)        0087
+_TXIF                              (abs)        0064
+_TXREG                             (abs)        0019
+_TXSTA                             (abs)        0098
+_TempH                             bssBANK0     004A
+_TempL                             bssBANK0     004B
+_WR                                (abs)        0C61
+_WREN                              (abs)        0C62
+__Habs1                            abs1         0000
+__Hbank0                           bank0        0000
+__Hbank1                           bank1        0000
+__Hbank2                           bank2        0000
+__Hbank3                           bank3        0000
+__HbitbssCOMMON                    bitbssCOMMON 0000
+__HbssBANK0                        bssBANK0     0000
+__Hcinit                           cinit        0000
+__Hclrtext                         clrtext      0000
+__Hcode                            code         0000
+__Hcommon                          common       0000
+__Hconfig                          config       2008
+__HcstackBANK0                     cstackBANK0  0000
+__HcstackCOMMON                    cstackCOMMON 0000
+__Heeprom_data                     eeprom_data  0000
+__Hend_init                        end_init     0013
+__Hfunctab                         functab      0000
+__Hidloc                           idloc        0000
+__Hinit                            init         0011
+__Hintentry                        intentry     0011
+__Hmaintext                        maintext     0000
+__Hpowerup                         powerup      0000
+__Hram                             ram          0000
+__Hreset_vec                       reset_vec    0002
+__Hsfr0                            sfr0         0000
+__Hsfr1                            sfr1         0000
+__Hsfr2                            sfr2         0000
+__Hsfr3                            sfr3         0000
+__Hstrings                         strings      0000
+__Htext                            text         0000
+__Labs1                            abs1         0000
+__Lbank0                           bank0        0000
+__Lbank1                           bank1        0000
+__Lbank2                           bank2        0000
+__Lbank3                           bank3        0000
+__LbitbssCOMMON                    bitbssCOMMON 0000
+__LbssBANK0                        bssBANK0     0000
+__Lcinit                           cinit        0000
+__Lclrtext                         clrtext      0000
+__Lcode                            code         0000
+__Lcommon                          common       0000
+__Lconfig                          config       2007
+__LcstackBANK0                     cstackBANK0  0000
+__LcstackCOMMON                    cstackCOMMON 0000
+__Leeprom_data                     eeprom_data  0000
+__Lend_init                        end_init     0011
+__Lfunctab                         functab      0000
+__Lidloc                           idloc        0000
+__Linit                            init         0011
+__Lintentry                        intentry     0004
+__Lmaintext                        maintext     0000
+__Lpowerup                         powerup      0000
+__Lram                             ram          0000
+__Lreset_vec                       reset_vec    0000
+__Lsfr0                            sfr0         0000
+__Lsfr1                            sfr1         0000
+__Lsfr2                            sfr2         0000
+__Lsfr3                            sfr3         0000
+__Lstrings                         strings      0000
+__Ltext                            text         0000
+__S0                               (abs)        2008
+__S1                               (abs)        007A
+__S2                               (abs)        0000
+___lwdiv                           text777      0F07
+___lwdiv@counter                   cstackBANK0  0022
+___lwdiv@dividend                  cstackCOMMON 0076
+___lwdiv@divisor                   cstackCOMMON 0074
+___lwdiv@quotient                  cstackBANK0  0020
+___wmul                            text778      0E47
+___wmul@multiplicand               cstackCOMMON 0076
+___wmul@multiplier                 cstackCOMMON 0074
+___wmul@product                    cstackBANK0  0020
+__end_of_AutoDetectSensors         text761      1000
+__end_of_GetData                   text770      0311
+__end_of_GetHumidity               text765      0F07
+__end_of_GetTemperature            text766      0EBF
+__end_of_IdentifySensor            text764      0E47
+__end_of_ReadBit                   text776      0E18
+__end_of_ReturnHumidity            text762      0540
+__end_of_ReturnTemperature         text763      043A
+__end_of___lwdiv                   text777      0F57
+__end_of___wmul                    text778      0E77
+__end_of_ds_gettemperature         text769      05F3
+__end_of_ds_read                   text773      0668
+__end_of_ds_reset                  text775      0FAB
+__end_of_ds_write                  text774      0744
+__end_of_isr                       text780      0DCE
+__end_of_main                      maintext     0198
+__end_of_onewire_init              text779      0DAA
+__end_of_onewire_listen            text767      0800
+__end_of_onewire_read              text771      06D9
+__end_of_onewire_sendpacket        text768      0DEA
+__end_of_onewire_write             text772      07AC
+__pbitbssCOMMON                    bitbssCOMMON 03C8
+__pbssBANK0                        bssBANK0     0042
+__pcstackBANK0                     cstackBANK0  0020
+__pcstackCOMMON                    cstackCOMMON 0070
+__pintentry                        intentry     0004
+__pmaintext                        maintext     0013
+__ptext760                         text760      0000
+__ptext761                         text761      0FAB
+__ptext762                         text762      043A
+__ptext763                         text763      0311
+__ptext764                         text764      0E18
+__ptext765                         text765      0EBF
+__ptext766                         text766      0E77
+__ptext767                         text767      07AC
+__ptext768                         text768      0DCE
+__ptext769                         text769      0540
+__ptext770                         text770      0198
+__ptext771                         text771      0668
+__ptext772                         text772      0744
+__ptext773                         text773      05F3
+__ptext774                         text774      06D9
+__ptext775                         text775      0F57
+__ptext776                         text776      0DEA
+__ptext777                         text777      0F07
+__ptext778                         text778      0E47
+__ptext779                         text779      0DA6
+__ptext780                         text780      0DB8
+__ptext781                         text781      0000
+__size_of_AutoDetectSensors        (abs)        0000
+__size_of_GetData                  (abs)        0000
+__size_of_GetHumidity              (abs)        0000
+__size_of_GetTemperature           (abs)        0000
+__size_of_IdentifySensor           (abs)        0000
+__size_of_ReadBit                  (abs)        0000
+__size_of_ReturnHumidity           (abs)        0000
+__size_of_ReturnTemperature        (abs)        0000
+__size_of___lwdiv                  (abs)        0000
+__size_of___wmul                   (abs)        0000
+__size_of_ds_gettemperature        (abs)        0000
+__size_of_ds_read                  (abs)        0000
+__size_of_ds_reset                 (abs)        0000
+__size_of_ds_write                 (abs)        0000
+__size_of_isr                      (abs)        0000
+__size_of_main                     (abs)        0000
+__size_of_onewire_init             (abs)        0000
+__size_of_onewire_listen           (abs)        0000
+__size_of_onewire_read             (abs)        0000
+__size_of_onewire_sendpacket       (abs)        0000
+__size_of_onewire_write            (abs)        0000
+_ds_gettemperature                 text769      0540
+_ds_read                           text773      05F3
+_ds_reset                          text775      0F57
+_ds_write                          text774      06D9
+_exit                              init         0011
+_isr                               text780      0DB8
+_main                              maintext     0013
+_onewire_init                      text779      0DA6
+_onewire_listen                    text767      07AC
+_onewire_read                      text771      0668
+_onewire_sendpacket                text768      0DCE
+_onewire_write                     text772      0744
+btemp                              (abs)        007E
+ds_gettemperature@databitmap       cstackBANK0  0029
+ds_gettemperature@result           cstackBANK0  002C
+ds_gettemperature@result_decimals  cstackBANK0  002E
+ds_gettemperature@result_int       cstackBANK0  002A
+ds_read@count                      cstackBANK0  0021
+ds_read@data                       cstackBANK0  0023
+ds_read@databit                    cstackBANK0  0020
+ds_write@count                     cstackBANK0  0021
+ds_write@data                      cstackBANK0  0020
+ds_write@lsb                       cstackBANK0  0023
+end_of_initialization              cinit        0DB5
+interrupt_function                 intentry     0004
+intlevel0                          functab      0000
+intlevel1                          functab      0000
+intlevel2                          functab      0000
+intlevel3                          functab      0000
+intlevel4                          functab      0000
+intlevel5                          functab      0000
+main@input                         cstackBANK0  0041
+onewire_listen@Payload             cstackBANK0  0027
+onewire_listen@RxAddress           cstackBANK0  0026
+onewire_listen@TxAddress           cstackBANK0  0024
+onewire_listen@address             cstackBANK0  0025
+onewire_listen@message_recieved    cstackBANK0  0028
+onewire_read@count                 cstackBANK0  0021
+onewire_read@data                  cstackBANK0  0023
+onewire_read@databit               cstackBANK0  0020
+onewire_sendpacket@RxAddress       cstackCOMMON 0077
+onewire_sendpacket@TxAddress       cstackBANK0  0024
+onewire_sendpacket@payload         cstackBANK0  0025
+onewire_write@count                cstackBANK0  0021
+onewire_write@data                 cstackBANK0  0020
+onewire_write@lsb                  cstackBANK0  0023
+reset_vec                          reset_vec    0000
+saved_w                            (abs)        007E
+start                              init         0011
+start_initialization               cinit        0DAA
+wtemp0                             (abs)        007E

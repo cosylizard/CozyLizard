@@ -1,0 +1,17 @@
+_RecieveSensorData: CODE, 1773 0 275
+_onewire_read: CODE, 1550 0 107
+_onewire_init: CODE, 976 0 4
+___awdiv: CODE, 1657 0 116
+_lcd_puts: CODE, 1087 0 30
+_lcd_putch: CODE, 984 0 9
+_onewire_listen: CODE, 1117 0 78
+___awmod: CODE, 1446 0 104
+_main: CODE, 1275 0 80
+_lcd_clear: CODE, 1018 0 15
+_lcd_goto: CODE, 993 0 10
+_pause: CODE, 1033 0 25
+_lcd_write: CODE, 1058 0 29
+_DisplayData: CODE, 1355 0 91
+_msecbase: CODE, 1003 0 15
+_lcd_init: CODE, 1195 0 80
+Total: 1068

@@ -1,0 +1,30 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=CLDC001
+*Date=18:27:36
+*CreatedBy=Fritzing 0.9.1b.11.19.8d2d5970658f0bed09c661c9ea9a515b5f40f44c
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;;10.753;-18.2056;0;Bottom;IMG2
+2;;;17.6723;-7.55434;0;Bottom;Via3
+3;;;2.59568;-7.05558;0;Bottom;Hole3
+4;;;39.6797;13.4803;0;Bottom;LCD1
+5;;avr_mini_prog;2.59568;-17.5056;-90;Bottom;U3
+6;;THT;31.8057;-18.4856;-90;Bottom;CLDC001-PIC
+7;;;45.7757;-29.9156;0;Bottom;Hole2
+8;;THT;22.922;-9.58923;0;Bottom;Pot
+9;;;45.7139;-11.2119;0;Bottom;Via4
+10;;;2.59568;-29.9156;0;Bottom;Hole1
+11;;;10.7577;-10.7361;0;Bottom;TXT1
+12;220;THT;38.1557;-7.05558;-180;Bottom;220ohm
+13;;;43.2755;-19.7463;0;Bottom;Via5
+14;;;45.7139;-25.8423;0;Bottom;Via2
+15;;;35.3507;-9.38314;0;Bottom;Via1

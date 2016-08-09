@@ -1,0 +1,22 @@
+_onewire_read: CODE, 1640 0 113
+_onewire_init: CODE, 3494 0 4
+_ds_read: CODE, 1523 0 117
+_GetHumidity: CODE, 3775 0 72
+_onewire_write: CODE, 1860 0 104
+_GetData: CODE, 408 0 377
+_ReadBit: CODE, 3562 0 46
+_onewire_listen: CODE, 1964 0 84
+_main: CODE, 19 0 389
+_IdentifySensor: CODE, 3608 0 47
+_GetTemperature: CODE, 3703 0 72
+_ReturnHumidity: CODE, 1082 0 262
+_ds_write: CODE, 1753 0 107
+_AutoDetectSensors: CODE, 4011 0 85
+___lwdiv: CODE, 3847 0 80
+_isr: CODE, 3512 0 22
+_onewire_sendpacket: CODE, 3534 0 28
+_ReturnTemperature: CODE, 785 0 297
+___wmul: CODE, 3655 0 48
+_ds_reset: CODE, 3927 0 84
+_ds_gettemperature: CODE, 1344 0 179
+Total: 2617

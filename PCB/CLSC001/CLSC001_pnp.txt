@@ -1,0 +1,31 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=CLSC001
+*Date=10:09:51
+*CreatedBy=Fritzing 0.9.1b.11.19.8d2d5970658f0bed09c661c9ea9a515b5f40f44c
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;4.7k;THT;22.8129;-27.8316;0;Bottom;4.7k
+2;;audio-jack;34.9729;-45.6116;0;Bottom;S1
+3;;;2.49288;-2.43157;0;Bottom;Hole2
+4;;audio-jack;34.9729;-32.9116;0;Bottom;S2
+5;;;2.49288;-48.1516;0;Bottom;Hole1
+6;;audio-jack;34.9729;-7.51157;0;Bottom;S4
+7;4.7k;THT;22.8129;-40.5316;0;Bottom;4.7k
+8;;THT;8.84288;-16.4016;0;Bottom;CLSC001-PIC
+9;;;16.764;-32.3378;0;Bottom;Via2
+10;;;22.0084;-21.6281;0;Bottom;TXT1
+11;4.7k;THT;22.8129;-15.1316;0;Bottom;4.7k
+12;;;27.7368;-35.3858;0;Bottom;Via1
+13;;;22.0974;-47.0126;0;Bottom;IMG1
+14;4.7k;THT;22.8129;-2.43157;0;Bottom;4.7k
+15;;audio-jack;34.9729;-20.2116;0;Bottom;S3
+16;;usb-a-s-nosilk-female;7.92147;-38.7939;0;Bottom;X1
