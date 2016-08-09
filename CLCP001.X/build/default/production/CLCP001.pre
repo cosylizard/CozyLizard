@@ -856,7 +856,7 @@ onewire_listen(0x00);
 }
 }
 
-unsigned char CalculateAverageHumidity(unsigned char HumidityArray[4][2])
+unsigned int CalculateAverageHumidity(unsigned char HumidityArray[4][2])
 {
 unsigned int HumidSensorCount;
 HumidSensorCount = 0;
@@ -1049,7 +1049,7 @@ TimeoutMultiplier = 1;
 
 
 unsigned char Humidity[4][2];
-unsigned char Humid;
+unsigned int Humid;
 unsigned char HumidL;
 unsigned char HumidH;
 

@@ -70,7 +70,7 @@ void InitialiseSensors()
     }
 }
 
-unsigned char CalculateAverageHumidity(unsigned char HumidityArray[4][2])
+unsigned int CalculateAverageHumidity(unsigned char HumidityArray[4][2])
 {
     unsigned int HumidSensorCount;
     HumidSensorCount = 0;
@@ -266,7 +266,7 @@ while (1)
             //calculate average humidity
 
             unsigned char Humidity[4][2];
-            unsigned char Humid;
+            unsigned int Humid;
             unsigned char HumidL;
             unsigned char HumidH;
 

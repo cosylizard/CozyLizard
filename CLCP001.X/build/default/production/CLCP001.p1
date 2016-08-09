@@ -1410,9 +1410,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 14 ]
 }
 "74
-[v _CalculateAverageHumidity `(uc  1 ef1`*F957 ]
+[v _CalculateAverageHumidity `(ui  1 ef1`*F957 ]
 {
-[; ;CLCP001.c: 73: unsigned char CalculateAverageHumidity(unsigned char HumidityArray[4][2])
+[; ;CLCP001.c: 73: unsigned int CalculateAverageHumidity(unsigned char HumidityArray[4][2])
 [; ;CLCP001.c: 74: {
 [e :U _CalculateAverageHumidity ]
 [v _HumidityArray `*F957  1 r1 ]
@@ -1473,7 +1473,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;CLCP001.c: 92: return HumiditySum / HumidSensorCount;
 "92
-[e ) -> / _HumiditySum _HumidSensorCount `uc ]
+[e ) / _HumiditySum _HumidSensorCount ]
 [e $UE 19  ]
 "94
 }
@@ -1487,7 +1487,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;CLCP001.c: 97: return 0x00;
 "97
-[e ) -> -> 0 `i `uc ]
+[e ) -> -> 0 `i `ui ]
 [e $UE 19  ]
 "98
 }
@@ -1923,13 +1923,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F1001 `uc  -> 2 `i t ]
 [v _Humidity `F1001  -> 4 `i a ]
 "269
-[v _Humid `uc  1 a ]
+[v _Humid `ui  1 a ]
 "270
 [v _HumidL `uc  1 a ]
 "271
 [v _HumidH `uc  1 a ]
 [; ;CLCP001.c: 268: unsigned char Humidity[4][2];
-[; ;CLCP001.c: 269: unsigned char Humid;
+[; ;CLCP001.c: 269: unsigned int Humid;
 [; ;CLCP001.c: 270: unsigned char HumidL;
 [; ;CLCP001.c: 271: unsigned char HumidH;
 [; ;CLCP001.c: 274: Humidity[0][0] = Humid1L;
@@ -1961,10 +1961,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _Humid ( _CalculateAverageHumidity (1 &U _Humidity ]
 [; ;CLCP001.c: 285: HumidL = (Humid >> 8);
 "285
-[e = _HumidL -> >> -> _Humid `i -> 8 `i `uc ]
+[e = _HumidL -> >> _Humid -> 8 `i `uc ]
 [; ;CLCP001.c: 286: HumidH = (Humid & 0xFF);
 "286
-[e = _HumidH -> & -> _Humid `i -> 255 `i `uc ]
+[e = _HumidH -> & _Humid -> -> 255 `i `ui `uc ]
 [; ;CLCP001.c: 289: onewire_sendpacket(0xF0,0x00,0x01);
 "289
 [e ( _onewire_sendpacket (3 , , -> -> 240 `i `uc -> -> 0 `i `uc -> -> 1 `i `uc ]

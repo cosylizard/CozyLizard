@@ -671,7 +671,7 @@
 "56
 [v _InitialiseSensors `(v  1 e 0 0 ]
 "74
-[v _CalculateAverageHumidity `(uc  1 e 1 0 ]
+[v _CalculateAverageHumidity `(ui  1 e 2 0 ]
 "102
 [v _main `(i  1 e 2 0 ]
 "17 CLDTP1.c
@@ -1650,51 +1650,51 @@
 [v _main `(i  1 e 2 0 ]
 {
 "268
-[v main@Humidity `[4][2]uc  1 a 8 19 ]
-"271
-[v main@HumidH `uc  1 a 1 45 ]
-"270
-[v main@HumidL `uc  1 a 1 44 ]
+[v main@Humidity `[4][2]uc  1 a 8 21 ]
 "269
-[v main@Humid `uc  1 a 1 43 ]
+[v main@Humid `ui  1 a 2 47 ]
+"271
+[v main@HumidH `uc  1 a 1 46 ]
+"270
+[v main@HumidL `uc  1 a 1 45 ]
 "157
-[v main@Humid4H `uc  1 a 1 42 ]
+[v main@Humid4H `uc  1 a 1 44 ]
 "156
-[v main@Humid4L `uc  1 a 1 41 ]
+[v main@Humid4L `uc  1 a 1 43 ]
 "155
-[v main@Temp4H `uc  1 a 1 40 ]
+[v main@Temp4H `uc  1 a 1 42 ]
 "154
-[v main@Temp4L `uc  1 a 1 39 ]
+[v main@Temp4L `uc  1 a 1 41 ]
 "153
-[v main@Humid3H `uc  1 a 1 38 ]
+[v main@Humid3H `uc  1 a 1 40 ]
 "152
-[v main@Humid3L `uc  1 a 1 37 ]
+[v main@Humid3L `uc  1 a 1 39 ]
 "151
-[v main@Temp3H `uc  1 a 1 36 ]
+[v main@Temp3H `uc  1 a 1 38 ]
 "150
-[v main@Temp3L `uc  1 a 1 35 ]
+[v main@Temp3L `uc  1 a 1 37 ]
 "149
-[v main@Humid2H `uc  1 a 1 34 ]
+[v main@Humid2H `uc  1 a 1 36 ]
 "148
-[v main@Humid2L `uc  1 a 1 33 ]
+[v main@Humid2L `uc  1 a 1 35 ]
 "147
-[v main@Temp2H `uc  1 a 1 32 ]
+[v main@Temp2H `uc  1 a 1 34 ]
 "146
-[v main@Temp2L `uc  1 a 1 31 ]
+[v main@Temp2L `uc  1 a 1 33 ]
 "145
-[v main@Humid1H `uc  1 a 1 30 ]
+[v main@Humid1H `uc  1 a 1 32 ]
 "144
-[v main@Humid1L `uc  1 a 1 29 ]
+[v main@Humid1L `uc  1 a 1 31 ]
 "143
-[v main@Temp1H `uc  1 a 1 28 ]
+[v main@Temp1H `uc  1 a 1 30 ]
 "142
-[v main@Temp1L `uc  1 a 1 27 ]
+[v main@Temp1L `uc  1 a 1 29 ]
 "141
-[v main@controllerId `uc  1 a 1 18 ]
+[v main@controllerId `uc  1 a 1 20 ]
 "131
-[v main@SensorAddress `uc  1 a 1 48 ]
+[v main@SensorAddress `uc  1 a 1 51 ]
 "128
-[v main@i `i  1 a 2 46 ]
+[v main@i `i  1 a 2 49 ]
 "317
 } 0
 "56
@@ -1764,15 +1764,15 @@
 "50
 } 0
 "74 CLCP001.c
-[v _CalculateAverageHumidity `(uc  1 e 1 0 ]
+[v _CalculateAverageHumidity `(ui  1 e 2 0 ]
 {
 [v CalculateAverageHumidity@HumidityArray `*.0[2]uc  1 a 1 wreg ]
 "81
-[v CalculateAverageHumidity@i `i  1 a 2 13 ]
+[v CalculateAverageHumidity@i `i  1 a 2 15 ]
 "75
-[v CalculateAverageHumidity@HumidSensorCount `ui  1 a 2 10 ]
+[v CalculateAverageHumidity@HumidSensorCount `ui  1 a 2 12 ]
 "78
-[v CalculateAverageHumidity@HumiditySum `ui  1 a 2 8 ]
+[v CalculateAverageHumidity@HumiditySum `ui  1 a 2 10 ]
 "74
 [v CalculateAverageHumidity@HumidityArray `*.0[2]uc  1 a 1 wreg ]
 "100
