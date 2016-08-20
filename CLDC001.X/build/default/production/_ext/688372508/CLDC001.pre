@@ -580,7 +580,8 @@ asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0x3FFC & 0x3FF7 & 0x3FDF
 
 
 unsigned char b0;
-
+int DataArray[4][5];
+unsigned char DisplayPage = 1;
 
 void DisplayData(int data)
 {
@@ -588,6 +589,45 @@ lcd_putch((data/100)%10 + 48);
 lcd_putch((data/10)%10 + 48);
 lcd_puts(".");
 lcd_putch((data)%10 + 48);
+}
+
+
+void RefreshDisplay()
+{
+
+lcd_clear();
+lcd_goto(0x0);
+
+lcd_puts("Controller ");
+lcd_putch(DisplayPage + 48);
+
+
+lcd_goto(0x40);
+lcd_puts("Tmp1 ");
+DisplayData(DataArray[DisplayPage][0]);
+
+lcd_puts(" Tmp2 ");
+DisplayData(DataArray[DisplayPage][1]);
+
+lcd_goto(0x14);
+lcd_puts("Tmp3 ");
+DisplayData(DataArray[DisplayPage][2]);
+
+lcd_puts(" Tmp4 ");
+DisplayData(DataArray[DisplayPage][3]);
+
+
+lcd_goto(0x54);
+lcd_puts("Humidity ");
+DisplayData(DataArray[DisplayPage][4]);
+}
+
+void ReceivePage()
+{
+
+DisplayPage = onewire_listen(0xF0);
+
+RefreshDisplay();
 }
 
 void RecieveSensorData()
@@ -605,43 +645,18 @@ unsigned char Temp4L = onewire_listen(0xF0);
 unsigned char HumidH = onewire_listen(0xF0);
 unsigned char HumidL = onewire_listen(0xF0);
 
+# 99
+DataArray[ControllerID][0] = (Temp1H<<8) + Temp1L;
+DataArray[ControllerID][1] = (Temp2H<<8) + Temp2L;
+DataArray[ControllerID][2] = (Temp3H<<8) + Temp3L;
+DataArray[ControllerID][3] = (Temp4H<<8) + Temp4L;
+DataArray[ControllerID][4] = (HumidH<<8) + HumidL;
 
-int Temp1 = (Temp1H<<8) + Temp1L;
-int Temp2 = (Temp2H<<8) + Temp2L;
-int Temp3 = (Temp3H<<8) + Temp3L;
-int Temp4 = (Temp4H<<8) + Temp4L;
-int Humid = (HumidH<<8) + HumidL;
-
-
-lcd_clear();
-lcd_goto(0x0);
-
-lcd_puts("Controller ");
-lcd_putch(ControllerID + 48);
-
-
-lcd_goto(0x40);
-lcd_puts("Tmp1 ");
-DisplayData(Temp1);
-
-lcd_puts(" Tmp2 ");
-DisplayData(Temp2);
-
-lcd_goto(0x14);
-lcd_puts("Tmp3 ");
-DisplayData(Temp3);
-
-lcd_puts(" Tmp4 ");
-DisplayData(Temp4);
-
-
-lcd_goto(0x54);
-lcd_puts("Humidity ");
-DisplayData(Humid);
+RefreshDisplay();
 }
 
-void
-main(void)
+
+void main(void)
 {
 unsigned char input;
 
@@ -673,5 +688,7 @@ input=onewire_listen(0xF0);
 
 if (input == 0x01)
 RecieveSensorData();
+if (input == 0x02)
+ReceivePage();
 }
 }

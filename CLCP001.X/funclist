@@ -1,12 +1,12 @@
-_onewire_read: CODE, 1190 0 113
-_onewire_init: CODE, 1706 0 14
-_onewire_write: CODE, 1303 0 104
-_onewire_listen: CODE, 921 0 140
-_CalculateAverageHumidity: CODE, 1061 0 129
-_main: CODE, 19 0 902
-___lwdiv: CODE, 1407 0 80
-_IdentifyConnectedControllers: CODE, 1564 0 74
-_isr: CODE, 1638 0 40
-_onewire_sendpacket: CODE, 1678 0 28
-_InitialiseSensors: CODE, 1487 0 77
-Total: 1701
+_onewire_read: CODE, 1238 0 113
+_onewire_init: CODE, 1754 0 14
+_onewire_write: CODE, 1351 0 104
+_onewire_listen: CODE, 969 0 140
+_CalculateAverageHumidity: CODE, 1109 0 129
+_main: CODE, 19 0 950
+___lwdiv: CODE, 1455 0 80
+_IdentifyConnectedControllers: CODE, 1612 0 74
+_isr: CODE, 1686 0 40
+_onewire_sendpacket: CODE, 1726 0 28
+_InitialiseSensors: CODE, 1535 0 77
+Total: 1749

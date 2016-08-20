@@ -1092,6 +1092,13 @@ _delay((unsigned long)((10)*(8000000/4000.0)));
 onewire_sendpacket(0xF0,0x00,HumidL);
 _delay((unsigned long)((10)*(8000000/4000.0)));
 onewire_sendpacket(0xF0,0x00,HumidH);
+
+
+_delay((unsigned long)((1000)*(8000000/4000.0)));
+onewire_sendpacket(0xF0,0x00,0x02);
+_delay((unsigned long)((10)*(8000000/4000.0)));
+onewire_sendpacket(0xF0,0x00,i);
+
 _delay((unsigned long)((3000)*(8000000/4000.0)));
 }
 }

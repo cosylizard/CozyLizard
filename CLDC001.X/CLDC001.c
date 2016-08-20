@@ -1,11 +1,12 @@
 /*
- *CLDC001 Display Controller (4x20 HD44780 LCD Display) v0.2
+ *CLDC001 Display Controller (4x20 HD44780 LCD Display) v0.3
  *(c) Cosy Lizard - 03 June 2015
  * line addresses   0x00 = line 1
  *                  0x40 = line 2
  *                  0x14 = line 3
  *                  0x54 = line 4
  * Modified 23 Feb 2016 - Changed from RS232 to CLDTP1 protocol
+ * Modified 20 Aug 2016 - Change Page command added
  */
 
 
@@ -23,7 +24,8 @@ __CONFIG (INTIO & WDTDIS & MCLRDIS & UNPROTECT);
 #define ASCIIConvert 0x30  //add to integer to display correspondig ASCII code
 
 unsigned char b0;
-
+int DataArray[4][5];
+unsigned char DisplayPage = 1;  //sensor page currently being displayed
 
 void DisplayData(int data) //display 3 digit number
 {
@@ -31,6 +33,45 @@ void DisplayData(int data) //display 3 digit number
     lcd_putch((data/10)%10 + 48);
     lcd_puts(".");
     lcd_putch((data)%10 + 48);
+}
+
+
+void RefreshDisplay()
+{
+    //display
+    lcd_clear();
+    lcd_goto(0x0);
+
+    lcd_puts("Controller ");
+    lcd_putch(DisplayPage + 48);
+
+    //display temperature
+    lcd_goto(0x40);
+    lcd_puts("Tmp1 ");
+    DisplayData(DataArray[DisplayPage][0]);
+
+    lcd_puts(" Tmp2 ");
+    DisplayData(DataArray[DisplayPage][1]);
+
+    lcd_goto(0x14);
+    lcd_puts("Tmp3 ");
+    DisplayData(DataArray[DisplayPage][2]);
+
+    lcd_puts(" Tmp4 ");
+    DisplayData(DataArray[DisplayPage][3]);
+
+    //display humidity
+    lcd_goto(0x54);
+    lcd_puts("Humidity ");
+    DisplayData(DataArray[DisplayPage][4]);
+}
+
+void ReceivePage()
+{
+    //get page number and assign page vaiable
+    DisplayPage = onewire_listen(0xF0);
+
+    RefreshDisplay();
 }
 
 void RecieveSensorData()
@@ -49,42 +90,24 @@ void RecieveSensorData()
     unsigned char HumidL = onewire_listen(0xF0);
 
     //combine high and low bytes
-    int Temp1 = (Temp1H<<8) + Temp1L;
-    int Temp2 = (Temp2H<<8) + Temp2L;
-    int Temp3 = (Temp3H<<8) + Temp3L;
-    int Temp4 = (Temp4H<<8) + Temp4L;
-    int Humid = (HumidH<<8) + HumidL;
+//    int Temp1 = (Temp1H<<8) + Temp1L;
+//    int Temp2 = (Temp2H<<8) + Temp2L;
+//    int Temp3 = (Temp3H<<8) + Temp3L;
+//    int Temp4 = (Temp4H<<8) + Temp4L;
+//    int Humid = (HumidH<<8) + HumidL;
 
-    //display
-    lcd_clear();
-    lcd_goto(0x0);
+    //load data into DataArray
+    DataArray[ControllerID][0] = (Temp1H<<8) + Temp1L;
+    DataArray[ControllerID][1] = (Temp2H<<8) + Temp2L;
+    DataArray[ControllerID][2] = (Temp3H<<8) + Temp3L;
+    DataArray[ControllerID][3] = (Temp4H<<8) + Temp4L;
+    DataArray[ControllerID][4] = (HumidH<<8) + HumidL;
 
-    lcd_puts("Controller ");
-    lcd_putch(ControllerID + 48);
-
-    //display temperature
-    lcd_goto(0x40);
-    lcd_puts("Tmp1 ");
-    DisplayData(Temp1);
-
-    lcd_puts(" Tmp2 ");
-    DisplayData(Temp2);
-
-    lcd_goto(0x14);
-    lcd_puts("Tmp3 ");
-    DisplayData(Temp3);
-
-    lcd_puts(" Tmp4 ");
-    DisplayData(Temp4);
-
-    //display humidity
-    lcd_goto(0x54);
-    lcd_puts("Humidity ");
-    DisplayData(Humid);
+    RefreshDisplay();
 }
 
-void
-main(void)
+
+void main(void)
 {
 unsigned char  input;
 
@@ -116,5 +139,7 @@ while (1)
 
             if (input == 0x01) //command 0x01 recieve sensor data
                 RecieveSensorData();
+            if (input == 0x02) //command 0x02 switch page
+                ReceivePage();
 	}
 }

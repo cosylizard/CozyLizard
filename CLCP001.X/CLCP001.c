@@ -309,6 +309,13 @@ while (1)
               onewire_sendpacket(0xF0,0x00,HumidL);
               __delay_ms(10);
               onewire_sendpacket(0xF0,0x00,HumidH);
+
+
+              __delay_ms(1000);   //change display page to sensor just received
+              onewire_sendpacket(0xF0,0x00,0x02);
+              __delay_ms(10);
+              onewire_sendpacket(0xF0,0x00,i);
+
               __delay_ms(3000);
         }
     }

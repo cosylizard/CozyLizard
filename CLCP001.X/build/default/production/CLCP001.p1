@@ -2034,31 +2034,43 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;CLCP001.c: 311: onewire_sendpacket(0xF0,0x00,HumidH);
 "311
 [e ( _onewire_sendpacket (3 , , -> -> 240 `i `uc -> -> 0 `i `uc _HumidH ]
-[; ;CLCP001.c: 312: _delay((unsigned long)((3000)*(8000000/4000.0)));
-"312
+[; ;CLCP001.c: 314: _delay((unsigned long)((1000)*(8000000/4000.0)));
+"314
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;CLCP001.c: 315: onewire_sendpacket(0xF0,0x00,0x02);
+"315
+[e ( _onewire_sendpacket (3 , , -> -> 240 `i `uc -> -> 0 `i `uc -> -> 2 `i `uc ]
+[; ;CLCP001.c: 316: _delay((unsigned long)((10)*(8000000/4000.0)));
+"316
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;CLCP001.c: 317: onewire_sendpacket(0xF0,0x00,i);
+"317
+[e ( _onewire_sendpacket (3 , , -> -> 240 `i `uc -> -> 0 `i `uc -> _i `uc ]
+[; ;CLCP001.c: 319: _delay((unsigned long)((3000)*(8000000/4000.0)));
+"319
 [e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"313
+"320
 }
 [e :U 33 ]
-"314
+"321
 }
 "128
 [e :U 32 ]
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 4 `i 30  ]
 [e :U 31 ]
-"314
+"321
 }
-"315
+"322
 }
 [e :U 27 ]
 "126
 [e $U 28  ]
 [e :U 29 ]
-[; ;CLCP001.c: 313: }
-[; ;CLCP001.c: 314: }
-[; ;CLCP001.c: 315: }
-[; ;CLCP001.c: 317: }
-"317
+[; ;CLCP001.c: 320: }
+[; ;CLCP001.c: 321: }
+[; ;CLCP001.c: 322: }
+[; ;CLCP001.c: 324: }
+"324
 [e :UE 26 ]
 }

@@ -15,7 +15,7 @@ Linker command line:
   -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 -AIDLOC=02000h-02003h \
   -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA \
   -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\Dave\AppData\Local\Temp\s9r0.obj \
+  C:\Users\Dave\AppData\Local\Temp\s63g.obj \
   dist/default/production\CLCP001.X.production.obj 
 
 Object code version is 3.10
@@ -25,28 +25,28 @@ Machine type is 16F690
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Dave\AppData\Local\Temp\s9r0.obj
+C:\Users\Dave\AppData\Local\Temp\s63g.obj
                 end_init                             11       11        2        8       0
                 reset_vec                             0        0        2        0       0
 dist/default/production\CLCP001.X.production.obj
                 intentry                              4        4        D        8       0
                 config                             2007     2007        1     400E       0
-                text419                             666      666       28        8       0
-                text418                             6AA      6AA        E        8       0
-                text417                             57F      57F       50        8       0
-                text416                             425      425       81        8       0
-                text415                             517      517       68        8       0
-                text414                             4A6      4A6       71        8       0
-                text413                             68E      68E       1C        8       0
-                text412                             399      399       8C        8       0
-                text411                             61C      61C       4A        8       0
-                text410                             5CF      5CF       4D        8       0
-                maintext                             13       13      386        8       0
+                text419                             696      696       28        8       0
+                text418                             6DA      6DA        E        8       0
+                text417                             5AF      5AF       50        8       0
+                text416                             455      455       81        8       0
+                text415                             547      547       68        8       0
+                text414                             4D6      4D6       71        8       0
+                text413                             6BE      6BE       1C        8       0
+                text412                             3C9      3C9       8C        8       0
+                text411                             64C      64C       4A        8       0
+                text410                             5FF      5FF       4D        8       0
+                maintext                             13       13      3B6        8       0
                 cstackBANK0                          20       20       34       20       1
                 cstackCOMMON                         70       70        9       70       1
                 bssBANK0                             54       54        6       20       1
                 bitbssCOMMON                        3C8       79        2       70       1     8
-                cinit                               6B8      6B8        A        8       0
+                cinit                               6E8      6E8        A        8       0
                 nvBANK0                              5A       5A        2       20       1
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -56,18 +56,18 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                             11       11        2         0
                 intentry                              4        4        D         0
                 reset_vec                             0        0        2         0
-                text419                             666      666       28         0
-                text418                             6AA      6AA        E         0
-                text417                             57F      57F       50         0
-                text416                             425      425       81         0
-                text415                             517      517       68         0
-                text414                             4A6      4A6       71         0
-                text413                             68E      68E       1C         0
-                text412                             399      399       8C         0
-                text411                             61C      61C       4A         0
-                text410                             5CF      5CF       4D         0
-                maintext                             13       13      386         0
-                cinit                               6B8      6B8        A         0
+                text419                             696      696       28         0
+                text418                             6DA      6DA        E         0
+                text417                             5AF      5AF       50         0
+                text416                             455      455       81         0
+                text415                             547      547       68         0
+                text414                             4D6      4D6       71         0
+                text413                             6BE      6BE       1C         0
+                text412                             3C9      3C9       8C         0
+                text411                             64C      64C       4A         0
+                text410                             5FF      5FF       4D         0
+                maintext                             13       13      3B6         0
+                cinit                               6E8      6E8        A         0
 
         CLASS   STRCODE        
 
@@ -115,7 +115,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000002  000002         0       0  CODE        2
-                intentry                       000004  0006BE  0006C2         8       0  CODE        2
+                intentry                       000004  0006EE  0006F2         8       0  CODE        2
                 cstackBANK0                    000020  00003C  00005C        20       1  BANK0       1
                 cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
                 config                         002007  000001  002008      400E       0  CONFIG      2
@@ -128,13 +128,13 @@ UNUSED ADDRESS RANGES
         BANK1            00A0-00EF             50           1
         BANK2            0120-016F             50           1
         CODE             0002-0003              2           2
-                         06C2-0FFF            13E
+                         06F2-0FFF            10E
         COMMON           007A-007D              4           1
         CONST            0002-0003              2           2
-                         06C2-0FFF            100
+                         06F2-0FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0002-0003              2           2
-                         06C2-0FFF            100
+                         06F2-0FFF            100
         IDLOC            2000-2003              4           2
         RAM              005C-006F             14           1
                          00A0-00EF             50
@@ -144,9 +144,9 @@ UNUSED ADDRESS RANGES
         SFR2             0100-011F             20           1
         SFR3             0180-01EF             70           1
         STRCODE          0002-0003              2           2
-                         06C2-0FFF            93E
+                         06F2-0FFF            90E
         STRING           0002-0003              2           2
-                         06C2-0FFF            100
+                         06F2-0FFF            100
 
                                   Symbol Table
 
@@ -187,7 +187,7 @@ _BreakOnTimeout                           bitbssCOMMON 03C8
 _CARRY                                    (abs)        0018
 _CM1CON0                                  (abs)        0119
 _CM2CON0                                  (abs)        011A
-_CalculateAverageHumidity                 text416      0425
+_CalculateAverageHumidity                 text416      0455
 _EEADR                                    (abs)        010D
 _EECON1                                   (abs)        018C
 _EECON2                                   (abs)        018D
@@ -195,8 +195,8 @@ _EEDATA                                   (abs)        010C
 _GIE                                      (abs)        005F
 _IDTimeout                                bitbssCOMMON 03C9
 _INTCON                                   (abs)        000B
-_IdentifyConnectedControllers             text411      061C
-_InitialiseSensors                        text410      05CF
+_IdentifyConnectedControllers             text411      064C
+_InitialiseSensors                        text410      05FF
 _OSCCON                                   (abs)        008F
 _PIE1                                     (abs)        008C
 _PORTA                                    (abs)        0005
@@ -288,22 +288,22 @@ __Ltext                                   text         0000
 __S0                                      (abs)        2008
 __S1                                      (abs)        007A
 __S2                                      (abs)        0000
-___lwdiv                                  text417      057F
+___lwdiv                                  text417      05AF
 ___lwdiv@counter                          cstackBANK0  0022
 ___lwdiv@dividend                         cstackCOMMON 0076
 ___lwdiv@divisor                          cstackCOMMON 0074
 ___lwdiv@quotient                         cstackBANK0  0020
-__end_of_CalculateAverageHumidity         text416      04A6
-__end_of_IdentifyConnectedControllers     text411      0666
-__end_of_InitialiseSensors                text410      061C
-__end_of___lwdiv                          text417      05CF
-__end_of_isr                              text419      068E
-__end_of_main                             maintext     0399
-__end_of_onewire_init                     text418      06B8
-__end_of_onewire_listen                   text412      0425
-__end_of_onewire_read                     text414      0517
-__end_of_onewire_sendpacket               text413      06AA
-__end_of_onewire_write                    text415      057F
+__end_of_CalculateAverageHumidity         text416      04D6
+__end_of_IdentifyConnectedControllers     text411      0696
+__end_of_InitialiseSensors                text410      064C
+__end_of___lwdiv                          text417      05FF
+__end_of_isr                              text419      06BE
+__end_of_main                             maintext     03C9
+__end_of_onewire_init                     text418      06E8
+__end_of_onewire_listen                   text412      0455
+__end_of_onewire_read                     text414      0547
+__end_of_onewire_sendpacket               text413      06DA
+__end_of_onewire_write                    text415      05AF
 __pbitbssCOMMON                           bitbssCOMMON 03C8
 __pbssBANK0                               bssBANK0     0054
 __pcstackBANK0                            cstackBANK0  0020
@@ -311,16 +311,16 @@ __pcstackCOMMON                           cstackCOMMON 0070
 __pintentry                               intentry     0004
 __pmaintext                               maintext     0013
 __pnvBANK0                                nvBANK0      005A
-__ptext410                                text410      05CF
-__ptext411                                text411      061C
-__ptext412                                text412      0399
-__ptext413                                text413      068E
-__ptext414                                text414      04A6
-__ptext415                                text415      0517
-__ptext416                                text416      0425
-__ptext417                                text417      057F
-__ptext418                                text418      06AA
-__ptext419                                text419      0666
+__ptext410                                text410      05FF
+__ptext411                                text411      064C
+__ptext412                                text412      03C9
+__ptext413                                text413      06BE
+__ptext414                                text414      04D6
+__ptext415                                text415      0547
+__ptext416                                text416      0455
+__ptext417                                text417      05AF
+__ptext418                                text418      06DA
+__ptext419                                text419      0696
 __ptext420                                text420      0000
 __size_of_CalculateAverageHumidity        (abs)        0000
 __size_of_IdentifyConnectedControllers    (abs)        0000
@@ -334,15 +334,15 @@ __size_of_onewire_read                    (abs)        0000
 __size_of_onewire_sendpacket              (abs)        0000
 __size_of_onewire_write                   (abs)        0000
 _exit                                     init         0011
-_isr                                      text419      0666
+_isr                                      text419      0696
 _main                                     maintext     0013
-_onewire_init                             text418      06AA
-_onewire_listen                           text412      0399
-_onewire_read                             text414      04A6
-_onewire_sendpacket                       text413      068E
-_onewire_write                            text415      0517
+_onewire_init                             text418      06DA
+_onewire_listen                           text412      03C9
+_onewire_read                             text414      04D6
+_onewire_sendpacket                       text413      06BE
+_onewire_write                            text415      0547
 btemp                                     (abs)        007E
-end_of_initialization                     cinit        06BF
+end_of_initialization                     cinit        06EF
 interrupt_function                        intentry     0004
 intlevel0                                 functab      0000
 intlevel1                                 functab      0000
@@ -390,5 +390,5 @@ onewire_write@lsb                         cstackBANK0  0023
 reset_vec                                 reset_vec    0000
 saved_w                                   (abs)        007E
 start                                     init         0011
-start_initialization                      cinit        06B8
+start_initialization                      cinit        06E8
 wtemp0                                    (abs)        007E

@@ -707,16 +707,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SR1 `Vb  1 e@3319 ]
 "25 C:/Users/Dave/MPLABXProjects/CLDC001.X/CLDC001.c
 [v _b0 `uc  1 e ]
+"26 C:/Users/Dave/MPLABXProjects/CLDC001.X/CLDC001.c
+[v F690 `i  -> 5 `i t ]
+"26 C:/Users/Dave/MPLABXProjects/CLDC001.X/CLDC001.c
+[v _DataArray `F690  -> 4 `i e ]
+"27 C:/Users/Dave/MPLABXProjects/CLDC001.X/CLDC001.c
+[v _DisplayPage `uc  1 e ]
 "28 C:/Users/Dave/MPLABXProjects/CLDC001.X/lcd.h
 [v _lcd_putch `(v  0 ef1`uc ]
 "16 C:/Users/Dave/MPLABXProjects/CLDC001.X/lcd.h
 [v _lcd_puts `(v  0 ef1`*Cuc ]
-"14 C:/Users/Dave/MPLABXProjects/CLDC001.X/CLDTP1.h
-[v _onewire_listen `(uc  0 ef1`uc ]
 "12 C:/Users/Dave/MPLABXProjects/CLDC001.X/lcd.h
 [v _lcd_clear `(v  0 ef ]
 "20 C:/Users/Dave/MPLABXProjects/CLDC001.X/lcd.h
 [v _lcd_goto `(v  0 ef1`uc ]
+"14 C:/Users/Dave/MPLABXProjects/CLDC001.X/CLDTP1.h
+[v _onewire_listen `(uc  0 ef1`uc ]
 [p mainexit ]
 "24 C:/Users/Dave/MPLABXProjects/CLDC001.X/lcd.h
 [v _lcd_init `(v  0 ef ]
@@ -1106,244 +1112,282 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; 	psect config,class=CONFIG,delta=2 ;#
 [; 	dw 0x3FFC & 0x3FF7 & 0x3FDF & 0x3FFF ;#
 [; ;CLDC001.c: 25: unsigned char b0;
-"29
+[; ;CLDC001.c: 26: int DataArray[4][5];
+"27
+[i _DisplayPage
+-> -> 1 `i `uc
+]
+[; ;CLDC001.c: 27: unsigned char DisplayPage = 1;
+"30
 [v _DisplayData `(v  1 ef1`i ]
 {
-[; ;CLDC001.c: 28: void DisplayData(int data)
-[; ;CLDC001.c: 29: {
+[; ;CLDC001.c: 29: void DisplayData(int data)
+[; ;CLDC001.c: 30: {
 [e :U _DisplayData ]
 [v _data `i  1 r1 ]
 [f ]
-[; ;CLDC001.c: 30: lcd_putch((data/100)%10 + 48);
-"30
-[e ( _lcd_putch (1 -> + % / _data -> 100 `i -> 10 `i -> 48 `i `uc ]
-[; ;CLDC001.c: 31: lcd_putch((data/10)%10 + 48);
+[; ;CLDC001.c: 31: lcd_putch((data/100)%10 + 48);
 "31
-[e ( _lcd_putch (1 -> + % / _data -> 10 `i -> 10 `i -> 48 `i `uc ]
-[; ;CLDC001.c: 32: lcd_puts(".");
+[e ( _lcd_putch (1 -> + % / _data -> 100 `i -> 10 `i -> 48 `i `uc ]
+[; ;CLDC001.c: 32: lcd_putch((data/10)%10 + 48);
 "32
-[e ( _lcd_puts (1 :s 1C ]
-[; ;CLDC001.c: 33: lcd_putch((data)%10 + 48);
+[e ( _lcd_putch (1 -> + % / _data -> 10 `i -> 10 `i -> 48 `i `uc ]
+[; ;CLDC001.c: 33: lcd_puts(".");
 "33
-[e ( _lcd_putch (1 -> + % _data -> 10 `i -> 48 `i `uc ]
-[; ;CLDC001.c: 34: }
+[e ( _lcd_puts (1 :s 1C ]
+[; ;CLDC001.c: 34: lcd_putch((data)%10 + 48);
 "34
+[e ( _lcd_putch (1 -> + % _data -> 10 `i -> 48 `i `uc ]
+[; ;CLDC001.c: 35: }
+"35
 [e :UE 1 ]
 }
-"37
-[v _RecieveSensorData `(v  1 ef ]
-{
-[; ;CLDC001.c: 36: void RecieveSensorData()
-[; ;CLDC001.c: 37: {
-[e :U _RecieveSensorData ]
-[f ]
 "39
-[v _ControllerID `uc  1 a ]
-[; ;CLDC001.c: 39: unsigned char ControllerID = onewire_listen(0xF0);
-[e = _ControllerID ( _onewire_listen (1 -> -> 240 `i `uc ]
-"40
-[v _Temp1H `uc  1 a ]
-[; ;CLDC001.c: 40: unsigned char Temp1H = onewire_listen(0xF0);
-[e = _Temp1H ( _onewire_listen (1 -> -> 240 `i `uc ]
+[v _RefreshDisplay `(v  1 ef ]
+{
+[; ;CLDC001.c: 38: void RefreshDisplay()
+[; ;CLDC001.c: 39: {
+[e :U _RefreshDisplay ]
+[f ]
+[; ;CLDC001.c: 41: lcd_clear();
 "41
-[v _Temp1L `uc  1 a ]
-[; ;CLDC001.c: 41: unsigned char Temp1L = onewire_listen(0xF0);
-[e = _Temp1L ( _onewire_listen (1 -> -> 240 `i `uc ]
-"42
-[v _Temp2H `uc  1 a ]
-[; ;CLDC001.c: 42: unsigned char Temp2H = onewire_listen(0xF0);
-[e = _Temp2H ( _onewire_listen (1 -> -> 240 `i `uc ]
-"43
-[v _Temp2L `uc  1 a ]
-[; ;CLDC001.c: 43: unsigned char Temp2L = onewire_listen(0xF0);
-[e = _Temp2L ( _onewire_listen (1 -> -> 240 `i `uc ]
-"44
-[v _Temp3H `uc  1 a ]
-[; ;CLDC001.c: 44: unsigned char Temp3H = onewire_listen(0xF0);
-[e = _Temp3H ( _onewire_listen (1 -> -> 240 `i `uc ]
-"45
-[v _Temp3L `uc  1 a ]
-[; ;CLDC001.c: 45: unsigned char Temp3L = onewire_listen(0xF0);
-[e = _Temp3L ( _onewire_listen (1 -> -> 240 `i `uc ]
-"46
-[v _Temp4H `uc  1 a ]
-[; ;CLDC001.c: 46: unsigned char Temp4H = onewire_listen(0xF0);
-[e = _Temp4H ( _onewire_listen (1 -> -> 240 `i `uc ]
-"47
-[v _Temp4L `uc  1 a ]
-[; ;CLDC001.c: 47: unsigned char Temp4L = onewire_listen(0xF0);
-[e = _Temp4L ( _onewire_listen (1 -> -> 240 `i `uc ]
-"48
-[v _HumidH `uc  1 a ]
-[; ;CLDC001.c: 48: unsigned char HumidH = onewire_listen(0xF0);
-[e = _HumidH ( _onewire_listen (1 -> -> 240 `i `uc ]
-"49
-[v _HumidL `uc  1 a ]
-[; ;CLDC001.c: 49: unsigned char HumidL = onewire_listen(0xF0);
-[e = _HumidL ( _onewire_listen (1 -> -> 240 `i `uc ]
-"52
-[v _Temp1 `i  1 a ]
-[; ;CLDC001.c: 52: int Temp1 = (Temp1H<<8) + Temp1L;
-[e = _Temp1 + << -> _Temp1H `i -> 8 `i -> _Temp1L `i ]
-"53
-[v _Temp2 `i  1 a ]
-[; ;CLDC001.c: 53: int Temp2 = (Temp2H<<8) + Temp2L;
-[e = _Temp2 + << -> _Temp2H `i -> 8 `i -> _Temp2L `i ]
-"54
-[v _Temp3 `i  1 a ]
-[; ;CLDC001.c: 54: int Temp3 = (Temp3H<<8) + Temp3L;
-[e = _Temp3 + << -> _Temp3H `i -> 8 `i -> _Temp3L `i ]
-"55
-[v _Temp4 `i  1 a ]
-[; ;CLDC001.c: 55: int Temp4 = (Temp4H<<8) + Temp4L;
-[e = _Temp4 + << -> _Temp4H `i -> 8 `i -> _Temp4L `i ]
-"56
-[v _Humid `i  1 a ]
-[; ;CLDC001.c: 56: int Humid = (HumidH<<8) + HumidL;
-[e = _Humid + << -> _HumidH `i -> 8 `i -> _HumidL `i ]
-[; ;CLDC001.c: 59: lcd_clear();
-"59
 [e ( _lcd_clear ..  ]
-[; ;CLDC001.c: 60: lcd_goto(0x0);
-"60
+[; ;CLDC001.c: 42: lcd_goto(0x0);
+"42
 [e ( _lcd_goto (1 -> -> 0 `i `uc ]
-[; ;CLDC001.c: 62: lcd_puts("Controller ");
-"62
+[; ;CLDC001.c: 44: lcd_puts("Controller ");
+"44
 [e ( _lcd_puts (1 :s 2C ]
-[; ;CLDC001.c: 63: lcd_putch(ControllerID + 48);
-"63
-[e ( _lcd_putch (1 -> + -> _ControllerID `i -> 48 `i `uc ]
-[; ;CLDC001.c: 66: lcd_goto(0x40);
-"66
+[; ;CLDC001.c: 45: lcd_putch(DisplayPage + 48);
+"45
+[e ( _lcd_putch (1 -> + -> _DisplayPage `i -> 48 `i `uc ]
+[; ;CLDC001.c: 48: lcd_goto(0x40);
+"48
 [e ( _lcd_goto (1 -> -> 64 `i `uc ]
-[; ;CLDC001.c: 67: lcd_puts("Tmp1 ");
-"67
+[; ;CLDC001.c: 49: lcd_puts("Tmp1 ");
+"49
 [e ( _lcd_puts (1 :s 3C ]
-[; ;CLDC001.c: 68: DisplayData(Temp1);
-"68
-[e ( _DisplayData (1 _Temp1 ]
-[; ;CLDC001.c: 70: lcd_puts(" Tmp2 ");
-"70
+[; ;CLDC001.c: 50: DisplayData(DataArray[DisplayPage][0]);
+"50
+[e ( _DisplayData (1 *U + &U *U + &U _DataArray * -> _DisplayPage `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _DataArray * -> _DisplayPage `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;CLDC001.c: 52: lcd_puts(" Tmp2 ");
+"52
 [e ( _lcd_puts (1 :s 4C ]
-[; ;CLDC001.c: 71: DisplayData(Temp2);
-"71
-[e ( _DisplayData (1 _Temp2 ]
-[; ;CLDC001.c: 73: lcd_goto(0x14);
-"73
+[; ;CLDC001.c: 53: DisplayData(DataArray[DisplayPage][1]);
+"53
+[e ( _DisplayData (1 *U + &U *U + &U _DataArray * -> _DisplayPage `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _DataArray * -> _DisplayPage `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;CLDC001.c: 55: lcd_goto(0x14);
+"55
 [e ( _lcd_goto (1 -> -> 20 `i `uc ]
-[; ;CLDC001.c: 74: lcd_puts("Tmp3 ");
-"74
+[; ;CLDC001.c: 56: lcd_puts("Tmp3 ");
+"56
 [e ( _lcd_puts (1 :s 5C ]
-[; ;CLDC001.c: 75: DisplayData(Temp3);
-"75
-[e ( _DisplayData (1 _Temp3 ]
-[; ;CLDC001.c: 77: lcd_puts(" Tmp4 ");
-"77
+[; ;CLDC001.c: 57: DisplayData(DataArray[DisplayPage][2]);
+"57
+[e ( _DisplayData (1 *U + &U *U + &U _DataArray * -> _DisplayPage `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _DataArray * -> _DisplayPage `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;CLDC001.c: 59: lcd_puts(" Tmp4 ");
+"59
 [e ( _lcd_puts (1 :s 6C ]
-[; ;CLDC001.c: 78: DisplayData(Temp4);
-"78
-[e ( _DisplayData (1 _Temp4 ]
-[; ;CLDC001.c: 81: lcd_goto(0x54);
-"81
+[; ;CLDC001.c: 60: DisplayData(DataArray[DisplayPage][3]);
+"60
+[e ( _DisplayData (1 *U + &U *U + &U _DataArray * -> _DisplayPage `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _DataArray * -> _DisplayPage `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;CLDC001.c: 63: lcd_goto(0x54);
+"63
 [e ( _lcd_goto (1 -> -> 84 `i `uc ]
-[; ;CLDC001.c: 82: lcd_puts("Humidity ");
-"82
+[; ;CLDC001.c: 64: lcd_puts("Humidity ");
+"64
 [e ( _lcd_puts (1 :s 7C ]
-[; ;CLDC001.c: 83: DisplayData(Humid);
-"83
-[e ( _DisplayData (1 _Humid ]
-[; ;CLDC001.c: 84: }
-"84
+[; ;CLDC001.c: 65: DisplayData(DataArray[DisplayPage][4]);
+"65
+[e ( _DisplayData (1 *U + &U *U + &U _DataArray * -> _DisplayPage `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux * -> -> -> 4 `i `ui `ux -> -> # *U &U *U + &U _DataArray * -> _DisplayPage `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;CLDC001.c: 66: }
+"66
 [e :UE 2 ]
 }
+"69
+[v _ReceivePage `(v  1 ef ]
+{
+[; ;CLDC001.c: 68: void ReceivePage()
+[; ;CLDC001.c: 69: {
+[e :U _ReceivePage ]
+[f ]
+[; ;CLDC001.c: 71: DisplayPage = onewire_listen(0xF0);
+"71
+[e = _DisplayPage ( _onewire_listen (1 -> -> 240 `i `uc ]
+[; ;CLDC001.c: 73: RefreshDisplay();
+"73
+[e ( _RefreshDisplay ..  ]
+[; ;CLDC001.c: 74: }
+"74
+[e :UE 3 ]
+}
+"77
+[v _RecieveSensorData `(v  1 ef ]
+{
+[; ;CLDC001.c: 76: void RecieveSensorData()
+[; ;CLDC001.c: 77: {
+[e :U _RecieveSensorData ]
+[f ]
+"79
+[v _ControllerID `uc  1 a ]
+[; ;CLDC001.c: 79: unsigned char ControllerID = onewire_listen(0xF0);
+[e = _ControllerID ( _onewire_listen (1 -> -> 240 `i `uc ]
+"80
+[v _Temp1H `uc  1 a ]
+[; ;CLDC001.c: 80: unsigned char Temp1H = onewire_listen(0xF0);
+[e = _Temp1H ( _onewire_listen (1 -> -> 240 `i `uc ]
+"81
+[v _Temp1L `uc  1 a ]
+[; ;CLDC001.c: 81: unsigned char Temp1L = onewire_listen(0xF0);
+[e = _Temp1L ( _onewire_listen (1 -> -> 240 `i `uc ]
+"82
+[v _Temp2H `uc  1 a ]
+[; ;CLDC001.c: 82: unsigned char Temp2H = onewire_listen(0xF0);
+[e = _Temp2H ( _onewire_listen (1 -> -> 240 `i `uc ]
+"83
+[v _Temp2L `uc  1 a ]
+[; ;CLDC001.c: 83: unsigned char Temp2L = onewire_listen(0xF0);
+[e = _Temp2L ( _onewire_listen (1 -> -> 240 `i `uc ]
+"84
+[v _Temp3H `uc  1 a ]
+[; ;CLDC001.c: 84: unsigned char Temp3H = onewire_listen(0xF0);
+[e = _Temp3H ( _onewire_listen (1 -> -> 240 `i `uc ]
+"85
+[v _Temp3L `uc  1 a ]
+[; ;CLDC001.c: 85: unsigned char Temp3L = onewire_listen(0xF0);
+[e = _Temp3L ( _onewire_listen (1 -> -> 240 `i `uc ]
+"86
+[v _Temp4H `uc  1 a ]
+[; ;CLDC001.c: 86: unsigned char Temp4H = onewire_listen(0xF0);
+[e = _Temp4H ( _onewire_listen (1 -> -> 240 `i `uc ]
+"87
+[v _Temp4L `uc  1 a ]
+[; ;CLDC001.c: 87: unsigned char Temp4L = onewire_listen(0xF0);
+[e = _Temp4L ( _onewire_listen (1 -> -> 240 `i `uc ]
 "88
+[v _HumidH `uc  1 a ]
+[; ;CLDC001.c: 88: unsigned char HumidH = onewire_listen(0xF0);
+[e = _HumidH ( _onewire_listen (1 -> -> 240 `i `uc ]
+"89
+[v _HumidL `uc  1 a ]
+[; ;CLDC001.c: 89: unsigned char HumidL = onewire_listen(0xF0);
+[e = _HumidL ( _onewire_listen (1 -> -> 240 `i `uc ]
+[; ;CLDC001.c: 99: DataArray[ControllerID][0] = (Temp1H<<8) + Temp1L;
+"99
+[e = *U + &U *U + &U _DataArray * -> _ControllerID `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _DataArray * -> _ControllerID `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux `ui `ux + << -> _Temp1H `i -> 8 `i -> _Temp1L `i ]
+[; ;CLDC001.c: 100: DataArray[ControllerID][1] = (Temp2H<<8) + Temp2L;
+"100
+[e = *U + &U *U + &U _DataArray * -> _ControllerID `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _DataArray * -> _ControllerID `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux `ui `ux + << -> _Temp2H `i -> 8 `i -> _Temp2L `i ]
+[; ;CLDC001.c: 101: DataArray[ControllerID][2] = (Temp3H<<8) + Temp3L;
+"101
+[e = *U + &U *U + &U _DataArray * -> _ControllerID `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _DataArray * -> _ControllerID `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux `ui `ux + << -> _Temp3H `i -> 8 `i -> _Temp3L `i ]
+[; ;CLDC001.c: 102: DataArray[ControllerID][3] = (Temp4H<<8) + Temp4L;
+"102
+[e = *U + &U *U + &U _DataArray * -> _ControllerID `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _DataArray * -> _ControllerID `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux `ui `ux + << -> _Temp4H `i -> 8 `i -> _Temp4L `i ]
+[; ;CLDC001.c: 103: DataArray[ControllerID][4] = (HumidH<<8) + HumidL;
+"103
+[e = *U + &U *U + &U _DataArray * -> _ControllerID `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux * -> -> -> 4 `i `ui `ux -> -> # *U &U *U + &U _DataArray * -> _ControllerID `ux -> * -> # *U &U *U &U _DataArray `ui -> -> 5 `i `ui `ux `ui `ux + << -> _HumidH `i -> 8 `i -> _HumidL `i ]
+[; ;CLDC001.c: 105: RefreshDisplay();
+"105
+[e ( _RefreshDisplay ..  ]
+[; ;CLDC001.c: 106: }
+"106
+[e :UE 4 ]
+}
+"110
 [v _main `(v  1 ef ]
 {
-[; ;CLDC001.c: 86: void
-[; ;CLDC001.c: 87: main(void)
-[; ;CLDC001.c: 88: {
+[; ;CLDC001.c: 109: void main(void)
+[; ;CLDC001.c: 110: {
 [e :U _main ]
 [f ]
-"89
+"111
 [v _input `uc  1 a ]
-[; ;CLDC001.c: 89: unsigned char input;
-[; ;CLDC001.c: 91: ANSEL = 0;
-"91
+[; ;CLDC001.c: 111: unsigned char input;
+[; ;CLDC001.c: 113: ANSEL = 0;
+"113
 [e = _ANSEL -> -> 0 `i `uc ]
-[; ;CLDC001.c: 92: ANSELH = 0;
-"92
-[e = _ANSELH -> -> 0 `i `uc ]
-[; ;CLDC001.c: 93: CM1CON0 = 0;
-"93
-[e = _CM1CON0 -> -> 0 `i `uc ]
-[; ;CLDC001.c: 94: CM2CON0 = 0;
-"94
-[e = _CM2CON0 -> -> 0 `i `uc ]
-[; ;CLDC001.c: 95: OSCCON = 0b01110110;
-"95
-[e = _OSCCON -> -> 118 `i `uc ]
-[; ;CLDC001.c: 97: TRISA = 0;
-"97
-[e = _TRISA -> -> 0 `i `uc ]
-[; ;CLDC001.c: 98: TRISB = 0;
-"98
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;CLDC001.c: 99: TRISC = 0;
-"99
-[e = _TRISC -> -> 0 `i `uc ]
-[; ;CLDC001.c: 100: PORTB = 0;
-"100
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;CLDC001.c: 102: lcd_init();
-"102
-[e ( _lcd_init ..  ]
-[; ;CLDC001.c: 103: onewire_init();
-"103
-[e ( _onewire_init ..  ]
-[; ;CLDC001.c: 106: lcd_clear();
-"106
-[e ( _lcd_clear ..  ]
-[; ;CLDC001.c: 107: lcd_goto(0);
-"107
-[e ( _lcd_goto (1 -> -> 0 `i `uc ]
-[; ;CLDC001.c: 108: lcd_puts("    Cosy Lizard");
-"108
-[e ( _lcd_puts (1 :s 8C ]
-[; ;CLDC001.c: 109: lcd_goto(0x40);
-"109
-[e ( _lcd_goto (1 -> -> 64 `i `uc ]
-[; ;CLDC001.c: 110: lcd_puts("Initialising...");
-"110
-[e ( _lcd_puts (1 :s 9C ]
-[; ;CLDC001.c: 112: _delay((unsigned long)((1000)*(8000000/4000.0)));
-"112
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;CLDC001.c: 113: while (1)
-"113
-[e :U 5 ]
-[; ;CLDC001.c: 114: {
+[; ;CLDC001.c: 114: ANSELH = 0;
 "114
-{
-[; ;CLDC001.c: 115: input=onewire_listen(0xF0);
+[e = _ANSELH -> -> 0 `i `uc ]
+[; ;CLDC001.c: 115: CM1CON0 = 0;
 "115
-[e = _input ( _onewire_listen (1 -> -> 240 `i `uc ]
-[; ;CLDC001.c: 117: if (input == 0x01)
+[e = _CM1CON0 -> -> 0 `i `uc ]
+[; ;CLDC001.c: 116: CM2CON0 = 0;
+"116
+[e = _CM2CON0 -> -> 0 `i `uc ]
+[; ;CLDC001.c: 117: OSCCON = 0b01110110;
 "117
-[e $ ! == -> _input `i -> 1 `i 7  ]
-[; ;CLDC001.c: 118: RecieveSensorData();
-"118
-[e ( _RecieveSensorData ..  ]
-[e :U 7 ]
+[e = _OSCCON -> -> 118 `i `uc ]
+[; ;CLDC001.c: 119: TRISA = 0;
 "119
-}
-[e :U 4 ]
-"113
-[e $U 5  ]
-[e :U 6 ]
-[; ;CLDC001.c: 119: }
-[; ;CLDC001.c: 120: }
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;CLDC001.c: 120: TRISB = 0;
 "120
-[e :UE 3 ]
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;CLDC001.c: 121: TRISC = 0;
+"121
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;CLDC001.c: 122: PORTB = 0;
+"122
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;CLDC001.c: 124: lcd_init();
+"124
+[e ( _lcd_init ..  ]
+[; ;CLDC001.c: 125: onewire_init();
+"125
+[e ( _onewire_init ..  ]
+[; ;CLDC001.c: 128: lcd_clear();
+"128
+[e ( _lcd_clear ..  ]
+[; ;CLDC001.c: 129: lcd_goto(0);
+"129
+[e ( _lcd_goto (1 -> -> 0 `i `uc ]
+[; ;CLDC001.c: 130: lcd_puts("    Cosy Lizard");
+"130
+[e ( _lcd_puts (1 :s 8C ]
+[; ;CLDC001.c: 131: lcd_goto(0x40);
+"131
+[e ( _lcd_goto (1 -> -> 64 `i `uc ]
+[; ;CLDC001.c: 132: lcd_puts("Initialising...");
+"132
+[e ( _lcd_puts (1 :s 9C ]
+[; ;CLDC001.c: 134: _delay((unsigned long)((1000)*(8000000/4000.0)));
+"134
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;CLDC001.c: 135: while (1)
+"135
+[e :U 7 ]
+[; ;CLDC001.c: 136: {
+"136
+{
+[; ;CLDC001.c: 137: input=onewire_listen(0xF0);
+"137
+[e = _input ( _onewire_listen (1 -> -> 240 `i `uc ]
+[; ;CLDC001.c: 139: if (input == 0x01)
+"139
+[e $ ! == -> _input `i -> 1 `i 9  ]
+[; ;CLDC001.c: 140: RecieveSensorData();
+"140
+[e ( _RecieveSensorData ..  ]
+[e :U 9 ]
+[; ;CLDC001.c: 141: if (input == 0x02)
+"141
+[e $ ! == -> _input `i -> 2 `i 10  ]
+[; ;CLDC001.c: 142: ReceivePage();
+"142
+[e ( _ReceivePage ..  ]
+[e :U 10 ]
+"143
+}
+[e :U 6 ]
+"135
+[e $U 7  ]
+[e :U 8 ]
+[; ;CLDC001.c: 143: }
+[; ;CLDC001.c: 144: }
+"144
+[e :UE 5 ]
 }
 [a 8C 32 32 32 32 67 111 115 121 32 76 105 122 97 114 100 0 ]
 [a 9C 73 110 105 116 105 97 108 105 115 105 110 103 46 46 46 0 ]
